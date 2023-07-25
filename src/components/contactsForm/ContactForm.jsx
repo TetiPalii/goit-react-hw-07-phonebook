@@ -1,5 +1,4 @@
 import css from './ContactForm.module.css';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/operations';
 import Notiflix from 'notiflix';

@@ -3,7 +3,6 @@ import css from './ContactList.module.css';
 
 import {
   selectError,
-  selectFilter,
   selectIsLoading,
   selectItems,
   selectVisibleContacts,
@@ -20,7 +19,7 @@ export function ContactList() {
   // console.log(visibleContacts);
   useEffect(() => {
     dispatch(fetchContacts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ul>
