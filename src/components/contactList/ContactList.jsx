@@ -26,22 +26,25 @@ export function ContactList() {
       {isLoading && <p>Loading contacts...</p>}
       {error && <p>{error.message}</p>}
       {items.length > 0 &&
-        visibleContacts.map(({ id, name, number }) => (
-          <li key={id} className={css.item__contact}>
-            <p>
-              {name}: <span>{number}</span>
-            </p>
-            <button
-              className={css.contact__btn}
-              type="button"
-              onClick={() => {
-                dispatch(deleteContacts(id));
-              }}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
+        visibleContacts.map(({ id, name, phone }) => {
+          // console.log(id);
+          return (
+            <li key={id} className={css.item__contact}>
+              <p>
+                {name}: <span>{phone}</span>
+              </p>
+              <button
+                className={css.contact__btn}
+                type="button"
+                onClick={() => {
+                  dispatch(deleteContacts(id));
+                }}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })}
     </ul>
   );
 }
